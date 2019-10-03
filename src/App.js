@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import Top from './components/top/top.js'
+import './App.css'
 
-function App() {
+const App = () => {
+  const [didMount, setDidMount] = useState(false)
+  const [currentWeather, setCurrentWeather] = useState([])
+
+  useEffect(() => {
+    fetch("https://api.openweathermap.org/data/2.5/weather?id=2618425&units=metric&appid=afcaa866115671742fe4c24507136520")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data.dt)
+        setCurrentWeather(data)
+        setDidMount(true)
+      })
+  }, [])
+
+  const currentTemperature = currentWeather.main ? currentWeather.main.temp : 0
+  const currentDate = currentWeather.dt ? currentWeather.dt : 0
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { didMount &&
+      <Top currentTemperature={currentTemperature} currentDate={currentDate} />
+      }
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
