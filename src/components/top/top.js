@@ -10,6 +10,7 @@ const Top = ({currentTemperature, currentDate}) => {
 			</div>
 			<div className="currentDate">
 				<p>{formattedDate}</p>
+				<p>{formattedDate}</p>
 			</div>
     </div>
   )
