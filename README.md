@@ -1,5 +1,7 @@
 ## Copenhagen weather app with gif illustrations from The Simpsons
 
+http://weather.rita.wtf
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
