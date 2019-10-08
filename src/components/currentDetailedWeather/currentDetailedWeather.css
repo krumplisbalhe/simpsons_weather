@@ -1,3 +1,38 @@
 .currentDetailedWeather{
+  width: 90%;
+  padding: 10px;
+  height: calc(100% - 20px);
 	color: black;
+	display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "description description description description description description" ". sunRise sunRise sunSet sunSet ." " . tempMax tempMax tempMin tempMin ." ". . wind wind . .";
+}
+
+.currentDetailedWeather > div {
+  display: flex;
+  align-items: center;
+}
+
+.description {
+  grid-area: description;
+  justify-content: center;
+ }
+
+.humidity { grid-area: humidity; }
+
+.tempMax { grid-area: tempMax; }
+
+.tempMin { grid-area: tempMin; }
+
+.sunRise { grid-area: sunRise; }
+
+.sunSet { grid-area: sunSet; }
+
+.wind {
+  grid-area: wind;
+}
+
+.wind > span{
+  font-size: 10px;
 }
