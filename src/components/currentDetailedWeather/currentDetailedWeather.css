@@ -1,7 +1,5 @@
 .currentDetailedWeather{
   width: 90%;
-  padding: 10px;
-  height: calc(100% - 20px);
 	color: black;
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -12,12 +10,11 @@
 .currentDetailedWeather > div {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .description {
   grid-area: description;
-  justify-content: center;
 }
 
 .humidity{

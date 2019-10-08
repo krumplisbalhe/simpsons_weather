@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {HashRouter as Router, Route, Redirect} from 'react-router-dom'
 import Top from './components/top/top.js'
 import Nav from './components/nav/nav.js'
 import FutureWeather from './components/futureWeather/futureWeather.js'
@@ -46,6 +46,9 @@ const App = () => {
     <Fragment>
       {currentWeather.loaded && futureWeather.loaded ?
         <Router>
+          <Route exact path="/">
+            <Redirect to="/forecast" />
+          </Route>
           <div
             className="app"
           >

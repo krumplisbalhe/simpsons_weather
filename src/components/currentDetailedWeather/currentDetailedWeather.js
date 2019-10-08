@@ -13,13 +13,12 @@ const CurrentDetailedWeather = ({description, tempMax, tempMin, sunRise, sunSet,
     var minutes = "0" + date.getMinutes()
     return hours + ':' + minutes.substr(-2)
     }
-  const descriptionCapitalized = description.charAt(0).toUpperCase() + description.slice(1)
   const displayMaxTemperature = Math.round(tempMax)
 	const displayMinTemperature = Math.round(tempMin)
 	return (
     <div className="currentDetailedWeather">
       <div className="description">
-        D'oh! {descriptionCapitalized} today...
+        D'oh! It's {description} today...
       </div>
       <div className="tempMax">
         <TempMax />
@@ -39,7 +38,7 @@ const CurrentDetailedWeather = ({description, tempMax, tempMin, sunRise, sunSet,
       </div>
       <div className="wind">
         <Wind />
-        {wind} <span>km/h</span>
+        {wind}<span>km/h</span>
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 {
   "name": "simpsons_weather",
+  "homepage": "http://weather.rita.wtf",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
