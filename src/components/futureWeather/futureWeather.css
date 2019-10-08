@@ -1,8 +1,8 @@
 .futureWeather{
+	padding-top: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	flex-grow: 1;
-	justify-content: center;
 	color: black;
+	height: calc(35% - 40px);
 }

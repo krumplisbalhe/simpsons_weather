@@ -1,10 +1,12 @@
 .currentDetailedWeather{
+  padding-top: 10px;
   width: 90%;
 	color: black;
 	display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas: "description description description description description description" ". sunRise sunRise sunSet sunSet ." " . tempMax tempMax tempMin tempMin ." ". . wind wind . .";
+  height: calc(35% - 30px);
 }
 
 .currentDetailedWeather > div {

@@ -18,7 +18,7 @@ const CurrentDetailedWeather = ({description, tempMax, tempMin, sunRise, sunSet,
 	return (
     <div className="currentDetailedWeather">
       <div className="description">
-        D'oh! It's {description} today...
+        D'oh! It's {description} today... Perfect for donuts!
       </div>
       <div className="tempMax">
         <TempMax />

@@ -1,7 +1,9 @@
 .loading{
-	width: 100%;
+	width: 25%;
 	height: 100%;
-	background-image: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif');
-	background-size: cover;
-  background-position: center;
+	background-image: url('https://thumbs.gfycat.com/UnitedSmartBinturong-max-1mb.gif');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin: auto;
 }
