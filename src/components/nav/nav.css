@@ -11,14 +11,14 @@ ul{
 	width: 100%;
 }
 
-.nav-links{
+.navLinks{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	list-style: none;
 }
 
-.nav-links > a{
+.navLinks > a{
 	text-decoration: none;
 	cursor: pointer;
 	color: black;
@@ -27,6 +27,6 @@ ul{
 	text-align: center;
 }
 
-.nav-links > a.is-active{
+.navLinks > a.isActive{
 	border-bottom: 2px solid black;
 }

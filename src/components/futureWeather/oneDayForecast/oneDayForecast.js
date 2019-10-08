@@ -8,12 +8,11 @@ import MargeIcon from '../../icons/margeIcon.js'
 import './oneDayForecast.css'
 
 const OneDayForecast = ({date, tempMax, tempMin, probPrec, index}) => {
-	const getDayName = (dateStr) => {
-		const dateParts = dateStr.split("/")
+	const getDayName = (date) => {
+		const dateParts = date.split("/")
 		const dateObject = new Date(dateParts[2], dateParts[1] - 1, dateParts[0])
     return dateObject.toLocaleDateString("en-US", { weekday: 'long' })
 	}
-
 	const getIcon = (index) => {
 		if (index===0) return <HomerIcon />
 		if (index===1) return <MargeIcon />
@@ -21,9 +20,7 @@ const OneDayForecast = ({date, tempMax, tempMin, probPrec, index}) => {
 		if (index===3) return <LisaIcon />
 		if (index===4) return <MaggieIcon />
 	}
-
 	const dailyAverage = Math.round((tempMin+tempMax)/2)
-	
 	return (
     <div className="oneDayForecast">
 			<span className="leftAligned">{getIcon(index)} {getDayName(date)}</span>

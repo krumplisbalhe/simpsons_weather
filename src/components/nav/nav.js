@@ -2,14 +2,14 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import './nav.css'
 
-const Nav = ({currentTemperature, description}) => {
+const Nav = () => {
 	return (
     <div className="nav">
-      <ul className="nav-links">
-        <NavLink activeClassName='is-active' to='/forecast'>
+      <ul className="navLinks">
+        <NavLink activeClassName='isActive' to='/forecast'>
           <li>Forecast</li>
         </NavLink>
-        <NavLink activeClassName='is-active' to='/today'>
+        <NavLink activeClassName='isActive' to='/today'>
           <li>Today</li>
         </NavLink>
       </ul>

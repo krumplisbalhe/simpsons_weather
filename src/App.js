@@ -1,4 +1,5 @@
 import React, { useEffect, useState, Fragment } from 'react'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Top from './components/top/top.js'
 import Nav from './components/nav/nav.js'
 import FutureWeather from './components/futureWeather/futureWeather.js'
@@ -6,7 +7,6 @@ import CurrentDetailedWeather from './components/currentDetailedWeather/currentD
 import {getBackgroundGif} from './components/giphys/giphy.js'
 import Loading from './components/loading/loading.js'
 import './App.css'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 const App = () => {
   const [currentWeather, setCurrentWeather] = useState({})
@@ -16,7 +16,6 @@ const App = () => {
     fetch("https://api.openweathermap.org/data/2.5/weather?id=2618425&units=metric&appid=afcaa866115671742fe4c24507136520")
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         setCurrentWeather({
           loaded: true,
           currentTemperature: data.main.temp,
@@ -46,45 +45,42 @@ const App = () => {
   return (
     <Fragment>
       {currentWeather.loaded && futureWeather.loaded ?
-      <Router>
-        <div
-          className="app"
-        >
+        <Router>
           <div
-            className="giphyBackground"
-            style={{backgroundImage:`url(${getBackgroundGif(currentWeather.currentTemperature, currentWeather.description)})`}}
+            className="app"
           >
-            <Top
-              currentTemperature={currentWeather.currentTemperature}
-              currentDate={currentWeather.currentDate}
+            <div
+              className="giphyBackground"
+              style={{backgroundImage:`url(${getBackgroundGif(currentWeather.currentTemperature, currentWeather.description)})`}}
+            >
+              <Top
+                currentTemperature={currentWeather.currentTemperature}
+                currentDate={currentWeather.currentDate}
+              />
+              <Nav />
+            </div>
+            <Route
+              path="/forecast"
+              render={() => <FutureWeather futureWeather={futureWeather.days}/>}
             />
-            <Nav
-              currentTemperature={currentWeather.currentTemperature}
-              description={currentWeather.description}
+            <Route
+              path="/today"
+              render={() =>
+                <CurrentDetailedWeather
+                  description={currentWeather.description}
+                  humidity={currentWeather.humidity}
+                  tempMax={currentWeather.tempMax}
+                  tempMin= {currentWeather.tempMin}
+                  sunRise={currentWeather.sunRise}
+                  sunSet={currentWeather.sunSet}
+                  wind={currentWeather.wind}
+                />
+              }
             />
           </div>
-          <Route
-            path="/forecast"
-            render={() => <FutureWeather futureWeather={futureWeather.days}/>}
-          />
-          <Route
-            path="/today"
-            render={() =>
-              <CurrentDetailedWeather
-                description={currentWeather.description}
-                humidity={currentWeather.humidity}
-                tempMax={currentWeather.tempMax}
-                tempMin= {currentWeather.tempMin}
-                sunRise={currentWeather.sunRise}
-                sunSet={currentWeather.sunSet}
-                wind={currentWeather.wind}
-              />
-            }
-          />
-        </div>
         </Router>
       :
-      <Loading />
+        <Loading />
       }
     </Fragment>
   )

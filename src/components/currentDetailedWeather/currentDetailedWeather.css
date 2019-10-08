@@ -17,19 +17,29 @@
 .description {
   grid-area: description;
   justify-content: center;
- }
+}
 
-.humidity { grid-area: humidity; }
+.humidity{
+  grid-area: humidity;
+}
 
-.tempMax { grid-area: tempMax; }
+.tempMax{
+  grid-area: tempMax;
+}
 
-.tempMin { grid-area: tempMin; }
+.tempMin{
+  grid-area: tempMin;
+}
 
-.sunRise { grid-area: sunRise; }
+.sunRise{
+  grid-area: sunRise;
+}
 
-.sunSet { grid-area: sunSet; }
+.sunSet{
+  grid-area: sunSet;
+}
 
-.wind {
+.wind{
   grid-area: wind;
 }
 

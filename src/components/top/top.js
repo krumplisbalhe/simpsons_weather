@@ -4,7 +4,6 @@ import './top.css'
 const Top = ({currentTemperature, currentDate}) => {
 	const displayTemperature = Math.round(currentTemperature)
 	const formattedDate = new Date(currentDate*1000).toLocaleDateString('en-EN', {weekday: 'long', month: 'short', day: 'numeric'})
-	
 	return (
     <div className="top">
 			<div className="currentTemperature">
