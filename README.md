@@ -1,3 +1,5 @@
+## Copenhagen weather app with gif illustrations from The Simpsons
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
