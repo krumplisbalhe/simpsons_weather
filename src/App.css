@@ -1,22 +1,21 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+.app {
+  background-color: white;
+  color: white;
   min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-family: 'Questrial', sans-serif;
 }
 
-.App-link {
-  color: #09d3ac;
+.giphyBackground{
+  background-size: cover;
+  background-position: center;
+  height: 65vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
 }

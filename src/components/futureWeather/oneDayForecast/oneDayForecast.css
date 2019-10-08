@@ -1,0 +1,20 @@
+.oneDayForecast{
+	padding-bottom: 15px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.oneDayForecast > span{
+	margin-right: 15px;
+}
+
+.leftAligned{
+	text-align: left;
+	flex-grow: 1;
+}
+
+.leftAligned > svg{
+	vertical-align: middle;
+}

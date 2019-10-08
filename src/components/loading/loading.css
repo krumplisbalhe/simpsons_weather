@@ -1,0 +1,7 @@
+.loading{
+	width: 100vw;
+	height: 100vh;
+	background-image: url('https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif');
+	background-size: cover;
+  background-position: center;
+}
