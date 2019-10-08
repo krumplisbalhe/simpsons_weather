@@ -13,7 +13,8 @@ const App = () => {
   const [futureWeather, setFutureWeather] = useState({})
 
   useEffect(() => {
-    fetch("https://api.openweathermap.org/data/2.5/weather?id=2618425&units=metric&appid=afcaa866115671742fe4c24507136520")
+    const fetchCurrentData = () => {
+      fetch("https://api.openweathermap.org/data/2.5/weather?id=2618425&units=metric&appid=afcaa866115671742fe4c24507136520")
       .then(response => response.json())
       .then(data => {
         setCurrentWeather({
@@ -29,10 +30,18 @@ const App = () => {
           wind: data.wind.speed,
         })
       })
+    }
+
+    fetchCurrentData()
+
+    const interval = setInterval(fetchCurrentData, 60000)
+
+    return () => clearInterval(interval)
   }, [])
 
   useEffect(() => {
-    fetch("http://api.weatherunlocked.com/api/forecast/55.676,12.568?app_id=d1c412bb&app_key=0cddddb94a1715880ae41a727a584d30")
+    const fetchFutureData = () => {
+      fetch("http://api.weatherunlocked.com/api/forecast/55.676,12.568?app_id=d1c412bb&app_key=0cddddb94a1715880ae41a727a584d30")
       .then(response => response.json())
       .then(data => {
         setFutureWeather({
@@ -40,6 +49,13 @@ const App = () => {
           days: data.Days
         })
       })
+    }
+
+    fetchFutureData()
+
+    const interval = setInterval(fetchFutureData, 60000)
+
+    return () => clearInterval(interval)
   }, [])
 
   return (
